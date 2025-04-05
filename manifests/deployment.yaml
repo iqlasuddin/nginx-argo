@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: openlitespeed
   labels:
-    app: nginx
+    app: openlitespeed
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: openlitespeed
   template:
     metadata:
       labels:
-        app: nginx
+        app: openlitespeed
     spec:
       containers:
-      - name: nginx
-        image: nginx:alpine
+      - name: openlitespeed
+        image: litespeedtech/openlitespeed:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8088
